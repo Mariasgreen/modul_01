@@ -10,11 +10,13 @@ const price =  Number(prompt('Цена товара'))
 
 
 
-  console.log(typeof item  + '' + typeof count +'' + typeof category +'' + typeof price);
- 
+  console.log(typeof item);
+  console.log(typeof count);
+  console.log(typeof category);
+  console.log(typeof price);
 
 
-  console.log('На складе ' + count + ' единицы товара ' + item + ` на сумму товара: ${count * price}`  + ' деревянных' ) ;
+  console.log( `На складе  ${count} единицы товара  ${item} на сумму товара: ${count * price} деревянных` ) ;
 
 
   
