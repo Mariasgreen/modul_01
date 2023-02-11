@@ -3,8 +3,9 @@
 const result = Number(prompt('число'));
 
 
-  if (isNaN(result)){
-    console.log("Вы ввели некорректные данные");
-  } else {
-    console.log (result );
-  }
+  if (result == NaN) {
+    console.log(typeof result);
+    } else {
+        console.log("Вы ввели некорректные данные");
+    }
+
