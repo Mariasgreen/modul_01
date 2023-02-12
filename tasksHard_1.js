@@ -1,9 +1,12 @@
+
+
+
 const income = Number(prompt('доход'));
 
-if(income < 15000){
+if(income <= 15000){
    const a = income * 0.13;
     console.log(a);
-} else if(income > 15000 && income < 50000){
+} else if(income > 15000 && income <= 50000){
     const b = income * 0.20;
     console.log(b);
 }
