@@ -6,7 +6,7 @@ function calculate(basketAmount, countGoods, promo) {
   
   let total = basketAmount;
 
-    if ( countGoods >= 10) {
+    if ( countGoods > 10) {
 
         const countThreeProcent = basketAmount/100*3;
         total =  basketAmount-countThreeProcent
@@ -14,7 +14,7 @@ function calculate(basketAmount, countGoods, promo) {
         
       }
 
-      if (basketAmount >= 30000) {
+      if (basketAmount > 30000) {
       total= total-((total-30000)*0.15)
       
        
@@ -26,9 +26,9 @@ function calculate(basketAmount, countGoods, promo) {
    
       } 
 
- if (promo == 'G3H2Z1' && basketAmount >= 20000) {
-        const countFifteenProcent = total/100*15;
-         total = total- countFifteenProcent;
+ if (promo == 'G3H2Z1' && total > 2000) {
+
+         total = total- 500;
          
       }
 
@@ -36,19 +36,14 @@ return total
 
   }
   
-/*
-  const totalResult =  calculate(50000,11);
 
-  console.log(totalResult);
-
-*/
 
 
 
   const total1 =  calculate(3000,11);
   const total2 =  calculate(35000,2);
-  const total3 =  calculate(3000,1, 'METHED');
-  const total4 =  calculate(30000,1,'G3H2Z1');
+  const total3 =  calculate(3000,12, 'METHED');
+  const total4 =  calculate(30000,11,'G3H2Z1');
 
  
   console.log(total1);
