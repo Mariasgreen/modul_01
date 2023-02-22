@@ -1,40 +1,30 @@
 
 
-  const even = (lenght,n,m,str) => {
-   
+const even = (lenght, n, m, str) => {
+
    const newArr = [];
-      
 
-      if(str == 'even'){
-         for (let i = 0; i < lenght; i++ ){
-       
-            newArr[i] =(Math.floor(Math.random()* (m-n)/2 + n)*2);
-
-            if ((i % 2 )===0){
-                newArr.push(i)
-            }
-
-
-
+   for (let i = 0; i < lenght; i++) {
+      let num = (Math.floor(Math.random() * (m - n) + n)); ;
+      if (str === 'odd') {
+         while (!(num % 2)) {
+            num = (Math.floor(Math.random() * (m - n) + n));
+          
          }
-       
+
+
+      } else if (str === 'even') {
+         while ((num % 2)) {
+            num = (Math.floor(Math.random() * (m - n) + n));
+            
+         }
       }
-      
+      newArr.push(num);
+   };
+
+   return newArr ;
+
+}
 
 
-     
-      
-
-    
-return newArr
-     
-     
-    }
-  
-   
-   
-
-   
-
-
- console.log(even (5,4,20, 'even'))
+console.log(even(5, 20, 4))
