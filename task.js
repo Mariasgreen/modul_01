@@ -1002,13 +1002,11 @@ const listIPv4 = [
 const b = new Set(listIPv4);
 
 
-
 function unique(arr) {
-  return Array.from(new Set(arr));
+ return new Set(arr).size;
  }
       
        
  console.log( unique(listIPv4) );
- console.log( b.size );
-     
+
 
