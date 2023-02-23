@@ -999,8 +999,6 @@ const listIPv4 = [
     "10.76.135.61",
     "10.177.24.39",];
 
-const b = new Set(listIPv4);
-
 
 function unique(arr) {
  return new Set(arr).size;
