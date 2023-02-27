@@ -13,10 +13,14 @@ const rectangle = {
   },
 
   set widthRec(newWidth) {
-    this.width = newWidth;
+    if (newWidth === !isNaN) {
+      this.width = newWidth;
+    }
   },
   set heightRec(newHeight) {
-    this.height = newHeight;
+    if (newHeight === !isNaN) {
+      this.height = newHeight;
+    }
   },
 };
 

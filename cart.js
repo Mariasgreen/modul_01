@@ -1,12 +1,19 @@
 'use strict';
 const cart = {
   items: [],
-  totalPrice: 0,
+
   count: 0,
   discount: 0,
 
-  get TotalPrice() {
+  get totalPrice() {
     return this.calculateItemPrice();
+  },
+  set setDiscount(promocode) {
+    if (promocode === 'METHED') {
+      this.discount = 15;
+    } else if (promocode === 'NEWYEAR') {
+      this.discount = 21;
+    }
   },
 
   add(item, price, itemCount = 1) {
@@ -23,7 +30,7 @@ const cart = {
 
   print() {
     console.log(JSON.stringify(this.items));
-    console.log(`total : ${this.TotalPrice} $`);
+    console.log(`total : ${this.totalPrice} $`);
   },
 
   calculateItemPrice() {
@@ -41,14 +48,6 @@ const cart = {
     this.count = 0;
   },
 
-
-  set setDiscount(promocode) {
-    if (promocode === 'METHED') {
-      this.discount = 15;
-    } else if (promocode === 'NEWYEAR') {
-      this.discount = 21;
-    }
-  },
 };
 
 cart.add('jeans', 120, 2);
