@@ -2,31 +2,32 @@
 
 
 const rectangle = {
-  width: 5,
-  height: 5,
+  _width: 5,
+  _height: 5,
 
   get perimeter() {
-    return 2 * (this.width + this.height) + ' sm';
+    return 2 * (this._width + this._height) + ' sm';
   },
   get square() {
-    return this.width * this.height + ' sm*2';
+    return this._width * this._height + ' sm*2';
   },
 
-  set widthRec(newWidth) {
-    if (newWidth === !isNaN) {
-      this.width = newWidth;
+  set width(newWidth) {
+    if (typeof newWidth === 'number') {
+      this._width = newWidth;
     }
   },
-  set heightRec(newHeight) {
-    if (newHeight === !isNaN) {
-      this.height = newHeight;
+
+  set height(newHeight) {
+    if (typeof newHeight === 'number') {
+      this._height = newHeight;
     }
   },
 };
 
 
-rectangle.width = 25;
-rectangle.height = 55;
+rectangle.width = '7';
+rectangle.height = '7';
 
 
 console.log(rectangle.perimeter);
