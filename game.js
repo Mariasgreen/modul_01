@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 
 'use strict';
@@ -14,11 +15,8 @@
     let compBalls = 5;
 
     function result() {
-      return function() { 
-       console.log( `you have ${userBalls} now and computer have ${compBalls}`);
-       }
-    
-      }
+      alert('GAME OVER' + '\n' + 'your result ' + userBalls + '\n' + 'computer  ' + compBalls);
+    }
 
 
     return function start() {
@@ -34,7 +32,7 @@
         return;
       }
 
-      if (guessPlayesBalls == 0 || guessPlayesBalls > userBalls || isNaN(guessPlayesBalls)) {
+      if (guessPlayesBalls <= 0 || guessPlayesBalls > userBalls || isNaN(guessPlayesBalls)) {
         alert('Error! Wrong bet');
       } else if ((resultFunc === 2 && (answer % 2 !== 0)) || (resultFunc === 1 && (answer % 2 === 0))) {
         userBalls += guessPlayesBalls;
@@ -48,18 +46,16 @@
 
 
       if (compBalls <= 0 || userBalls >= 10) {
-        alert('GAME OVER , YOU WON' + '\n' + 'your result ' + userBalls + '\n' + 'computer  ' + compBalls);
-
+        compBalls = 0;
+        userBalls = 10;
+        result();
         return;
       } else if (userBalls <= 0 || compBalls >= 10) {
-        alert('GAME OVER , YOU LOST' + '\n' + 'your result ' + userBalls + '\n' + 'computer  ' + compBalls);
-
+        compBalls = 10;
+        userBalls = 0;
+        result();
         return;
       }
-
-
-      const func = result();
-      func();
 
 
       return start();
